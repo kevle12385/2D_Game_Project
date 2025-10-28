@@ -129,25 +129,8 @@ public class Health2D : MonoBehaviour
 
 
 
-    public void Heal(int amount)
-    {
-        currentHP = Mathf.Min(maxHP, currentHP + amount);
-        onDamaged?.Invoke(); // refresh UI
-    }
     
-    void Start()
-    {
-
-        // if (CompareTag("Player"))
-        // {
-        //     // If the player doesn’t have a DeathCamera, spawn one
-        //     if (GameObject.FindWithTag("DeathCam") == null)
-        //     {
-        //         GameObject camPrefab = Resources.Load<GameObject>("DeathCam"); // or assign via inspector
-        //         Instantiate(camPrefab);
-        //     }
-        // }
-}
+    
 
 }
 

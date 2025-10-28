@@ -6,21 +6,20 @@ public class EnemyDeathAudioManager : MonoBehaviour
     private AudioSource audioSource;
 
     [Header("Enemy Death Sound")]
-    public AudioClip enemyDeathClip;
-    [Range(0f, 1f)] public float volume = 1f;
+    public AudioClip enemyDeathClip; // sound to play when an enemy dies
+    [Range(0f, 1f)] public float volume = 1f; // volume for the death sound
 
     void Awake()
     {
         // Singleton pattern so there’s only one persistent instance
         if (instance != null && instance != this)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); 
             return;
         }
 
-        instance = this;
-        audioSource = GetComponent<AudioSource>();
-        DontDestroyOnLoad(gameObject); // persists between scenes
+        instance = this;  // assign this object as actice instance
+        audioSource = GetComponent<AudioSource>(); // get AudioSource component
     }
 
     // Static method any enemy can call when it dies
@@ -28,8 +27,8 @@ public class EnemyDeathAudioManager : MonoBehaviour
     {
         if (instance != null && instance.enemyDeathClip != null)
         {
-            instance.audioSource.transform.position = position;
-            instance.audioSource.PlayOneShot(instance.enemyDeathClip, instance.volume);
+            instance.audioSource.transform.position = position; // move to death position
+            instance.audioSource.PlayOneShot(instance.enemyDeathClip, instance.volume); // play sound
         }
     }
 }
