@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // NEW input system
+using UnityEngine.InputSystem; 
 
 [RequireComponent(typeof(AudioSource))]
 public class LoopMusic : MonoBehaviour

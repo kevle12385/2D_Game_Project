@@ -1,9 +1,12 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem; 
 public class EnemyDeathAudioManager : MonoBehaviour
 {
     private static EnemyDeathAudioManager instance;
     private AudioSource audioSource;
+
+    private bool isMuted = false;
+
 
     [Header("Enemy Death Sound")]
     public AudioClip enemyDeathClip; // sound to play when an enemy dies
@@ -31,4 +34,17 @@ public class EnemyDeathAudioManager : MonoBehaviour
             instance.audioSource.PlayOneShot(instance.enemyDeathClip, instance.volume); // play sound
         }
     }
+
+    void Update()
+    {
+        // Keyboard.current is null on platforms without a keyboard
+        if (Keyboard.current != null && Keyboard.current.mKey.wasPressedThisFrame)
+        {
+            isMuted = !isMuted; // toggle mute state
+            audioSource.mute = isMuted; // apply mute state
+        }
+    }
+
+
+    
 }
