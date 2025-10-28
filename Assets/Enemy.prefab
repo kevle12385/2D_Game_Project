@@ -155,8 +155,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1521566797
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 918396499039396468, guid: b80719f48cd5145159ac2885cf419169, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -181,7 +181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35dff0ffb96a4fdba5b1c4b489d20fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  player: {fileID: 0}
   moveSpeed: 2
 --- !u!114 &5692113003494840713
 MonoBehaviour:
@@ -205,6 +204,10 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  deathSceneName: DeathScene
+  backupDeathCamera: {fileID: 0}
+  hurtClip: {fileID: 0}
+  deathClip: {fileID: 0}
 --- !u!114 &2342952692082343213
 MonoBehaviour:
   m_ObjectHideFlags: 0
